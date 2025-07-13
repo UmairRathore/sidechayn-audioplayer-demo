@@ -24,6 +24,11 @@ const currentTime = document.getElementById("currentTime");
 const totalTime = document.getElementById("totalTime");
 const songTitle = document.getElementById("songTitle");
 
+document.body.addEventListener('click', async () => {
+    await Tone.start();
+    await Tone.context.resume(); // iOS Safari
+}, { once: true });
+
 // Helper to format seconds into mm:ss
 const formatTime = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
 
