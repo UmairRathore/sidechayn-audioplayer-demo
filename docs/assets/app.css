@@ -19,6 +19,7 @@ body {
     padding: 1.5rem;
 }
 
+
 .vertical-slider {
     writing-mode: bt-lr;
     appearance: slider-vertical;
@@ -26,6 +27,7 @@ body {
     width: 1.5rem;
 }
 
+/* Song List Styling */
 .song-item {
     cursor: pointer;
     padding: 10px 14px;

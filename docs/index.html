@@ -1,15 +1,31 @@
+<!--
+    Unified Audio Tuner
+    - Streams selected songs with live playback control
+    - Supports tuning (speed, pitch, reverb) and 3-band equalizer
+    - Supports volume control, mute, play pause, audio time tracker and looping
+    - Bootstrap + FontAwesome for UI
+    - Tone.js used for real-time audio processing
+-->
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Unified Audio Tuner</title>
+
     <link rel="icon" href="data:,">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.39/Tone.js"></script>
 
+    <!-- custom css -->
     <link href="assets/app.css" rel="stylesheet">
+    <!-- custom css -->
 
 </head>
 <body>
@@ -17,12 +33,15 @@
         <div class="row justify-content-center mt-5">
             <!-- Sidebar -->
             <div class="col-md-3">
+                    <!-- Songs Listing -->
                 <div class="card-subsection h-100">
                     <h5>Songs</h5>
                     <div class="song-item" data-src="assets/mockingbird.mp3" data-title="Mockingbird - Eminem">🎵 Mockingbird - Eminem</div>
                     <div class="song-item" data-src="assets/rollingInTheDeep.mp3" data-title="Rolling in the Deep - Adele">🎵 Rolling in the Deep - Adele</div>
                 </div>
+                <!-- Songs Listing -->
             </div>
+            <!-- Sidebar -->
 
             <!-- Player + Sliders -->
             <div class="col-md-6">
@@ -58,60 +77,93 @@
                         <div class="card-subsection text-center h-100">
                             <h5 class="mb-3">Tuning</h5>
                             <div class="d-flex justify-content-around align-items-end">
+
+                                <!-- Speed -->
                                 <div>
                                     <label class="fw-semibold d-block mb-1">Speed</label>
                                     <input type="range" id="speedControl" min="0.5" max="2" step="0.1" value="1" class="vertical-slider"/>
                                     <div id="speedValue">1x</div>
                                 </div>
+                                <!-- Speed -->
+
+                                <!-- Range -->
                                 <div>
                                     <label class="fw-semibold d-block mb-1">Pitch</label>
                                     <input type="range" id="pitchControl" min="-12" max="12" step="1" value="0" class="vertical-slider"/>
                                     <div id="pitchValue">0</div>
                                 </div>
+                                <!-- Range -->
+
+                                <!-- Reverb -->
                                 <div>
                                     <label class="fw-semibold d-block mb-1">Reverb</label>
                                     <input type="range" id="reverbControl" min="0" max="1" step="0.05" value="0.3" class="vertical-slider"/>
                                     <div id="reverbValue">0.3</div>
                                 </div>
+                                <!-- Reverb -->
+
                             </div>
+
+                            <!-- Reset Tuning -->
                             <button id="tuningResetBtn" class="btn btn-sm btn-outline-secondary mt-3">
                                 <i class="fas fa-undo"></i> Reset Tuning
                             </button>
+                            <!-- Reset Tuning -->
+
                         </div>
                     </div>
+
 
                     <!-- Equalizer -->
                     <div class="col-md-6 mb-3">
                         <div class="card-subsection text-center h-100">
                             <h5 class="mb-3">Equalizer</h5>
                             <div class="d-flex justify-content-around align-items-end">
+
+                                <!-- Low -->
                                 <div>
                                     <label class="fw-semibold d-block mb-1">Low</label>
                                     <input type="range" id="lowEQ" min="-30" max="30" step="1" value="0" class="vertical-slider"/>
                                     <div id="lowEQValue">0</div>
                                 </div>
+                                <!-- Low -->
+
+                                <!-- mid -->
                                 <div>
                                     <label class="fw-semibold d-block mb-1">Mid</label>
                                     <input type="range" id="midEQ" min="-30" max="30" step="1" value="0" class="vertical-slider"/>
                                     <div id="midEQValue">0</div>
                                 </div>
+                                <!-- mid -->
+
+                                <!-- high -->
                                 <div>
                                     <label class="fw-semibold d-block mb-1">High</label>
                                     <input type="range" id="highEQ" min="-30" max="30" step="1" value="0" class="vertical-slider"/>
                                     <div id="highEQValue">0</div>
                                 </div>
+                                <!-- high -->
+
                             </div>
+
+                            <!-- Reset Equalizer -->
                             <button id="eqResetBtn" class="btn btn-sm btn-outline-secondary mt-3">
                                 <i class="fas fa-undo"></i> Reset EQ
                             </button>
+                            <!-- Reset Equalizer -->
+
                         </div>
                     </div>
+                    <!-- Equalizer -->
+
                 </div>
 
             </div> <!-- End col-md-9 -->
         </div> <!-- End row -->
 
+        <!-- custom js -->
         <script src="assets/app.js" defer></script>
+        <!-- custom js -->
 
 </body>
 </html>
