@@ -1,4 +1,4 @@
-<script>
+
     const player = new Tone.Player();
     const pitchShift = new Tone.PitchShift();
     const reverb = new Tone.Reverb({ decay: 2, wet: 0.3 });
@@ -145,4 +145,3 @@
     isLooping = false;
     loopBtn.innerText = "Loop Off";
 };
-</script>
