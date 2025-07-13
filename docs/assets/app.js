@@ -166,8 +166,8 @@ document.getElementById("eqResetBtn").onclick = () => {
     });
 };
 
-// Reset global settings (volume, loop)
-document.getElementById("globalResetBtn").onclick = () => {
+// Reset settings (volume, loop)
+document.getElementById("volResetBtn").onclick = () => {
     volumeSlider.value = 1;
     gain.gain.rampTo(1, 0.1);
     volumeValue.innerText = "100%";
