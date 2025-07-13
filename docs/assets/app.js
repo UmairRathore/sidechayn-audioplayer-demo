@@ -63,10 +63,14 @@ document.querySelectorAll('.song-item').forEach(item => {
 
 // Toggle Play/Pause logic
 document.getElementById("playBtn").onclick = async () => {
-    await Tone.start(); // Required to resume AudioContext (Chrome autoplay policy)
+    await Tone.start(); // Required to resume AudioContext
+
+    //  Ensure it’s running (important for mobile)
+    if (Tone.context.state !== 'running') {
+        await Tone.context.resume();
+    }
 
     if (!isPlaying) {
-        // Start playback
         playbackStartTime = Tone.now();
         player.loop = isLooping;
         player.start(undefined, playbackOffset);
@@ -74,7 +78,6 @@ document.getElementById("playBtn").onclick = async () => {
         document.getElementById("playBtn").innerHTML = '<i class="fas fa-pause text-dark"></i>';
         progressInterval = setInterval(updateProgress, 200);
     } else {
-        // Pause playback
         player.stop();
         playbackOffset += (Tone.now() - playbackStartTime) * player.playbackRate;
         isPlaying = false;
@@ -82,6 +85,7 @@ document.getElementById("playBtn").onclick = async () => {
         clearInterval(progressInterval);
     }
 };
+
 
 // Handle seeking using progress bar
 progressBar.oninput = () => {
