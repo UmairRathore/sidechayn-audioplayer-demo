@@ -1,0 +1,47 @@
+body {
+    background: #0f1115;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 2rem;
+}
+
+.card-glass {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    padding: 2rem;
+}
+
+.card-subsection {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.vertical-slider {
+    writing-mode: bt-lr;
+    appearance: slider-vertical;
+    height: 120px;
+    width: 1.5rem;
+}
+
+.song-item {
+    cursor: pointer;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+}
+
+.song-item:hover {
+    background-color: #2d313a;
+}
+
+.song-item.active {
+    background-color: #3a3f4a;
+    font-weight: bold;
+}
+
+.btn-loop {
+    min-width: 100px;
+}
